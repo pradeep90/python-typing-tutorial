@@ -4,16 +4,16 @@ from shelter import Shelter
 
 
 def print_stats(shelter):
-    cats = str(len(shelter.cats))
-    dogs = str(len(shelter.dogs)) 
+    cats = len(shelter.cats)
+    dogs = len(shelter.dogs)
     ratio = str(cats / dogs)
-    print("There are " + cats + " cats, " + dogs + " dogs. Ratio: " + ratio)
+    print("There are " + str(cats) + " cats, " + str(dogs) + " dogs. Ratio: " + ratio)
 
 
 def run(shelter):
     for hour in range(1, 9):
         stats = print_stats(shelter)
-        print("Stats at hour " + str(hour) + ": "  + stats)
+        print("Stats at hour " + str(hour) + ": "  + str(stats))
         shelter.simulate_hour()
 
 

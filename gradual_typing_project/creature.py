@@ -16,6 +16,7 @@ class Person(Creature):
     def __init__(self, name):
         self.name = name
         self.pets = []
+        self.friends = []
 
     def adopt(self, pet):
         self.pets.append(pet)
@@ -38,12 +39,13 @@ class Cat(Creature):
             self.make_friend(other)
         else:
             self.make_enemy(other)
-	
+
 
 class Dog(Creature):
     def __init__(self, name):
         self.name = name
         self.friends = []
+        self.enemies = []
 
     def make_friend(self, friend):
         self.friends.append(friend)
