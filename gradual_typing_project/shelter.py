@@ -4,14 +4,15 @@ import random
 
 from creature import Cat, Dog, Person
 from interact import adopt, play 
+from typing import Dict, List
 
 class Shelter:
-    def __init__(self):
+    def __init__(self) -> None:
         self.cats = []
         self.dogs = []
         self.people = []
 
-    def populate(self, input):
+    def populate(self, input: Dict[str, List[str]]) -> None:
         for name in input['cats']:
             self.cats.append(Cat(name))
         for name in input['dogs']:
@@ -19,7 +20,7 @@ class Shelter:
         for name in input['people']:
             self.people.append(Person(name))
 
-    def simulate_hour(self):
+    def simulate_hour(self) -> None:
         # Some random animal interactions
         all_animals = self.cats + self.dogs
         for _ in range(random.randint(0, 5)):
